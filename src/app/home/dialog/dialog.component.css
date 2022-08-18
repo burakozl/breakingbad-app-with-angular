@@ -1,0 +1,14 @@
+.dialog{
+  display: flex;
+  justify-content: space-between;
+}
+.dialogTitle{
+  display: flex;
+  align-items: center;
+}
+.mat-typography{
+  display: flex;
+}
+tr{
+  font-size: 20px;
+}

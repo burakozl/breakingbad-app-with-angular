@@ -1,0 +1,70 @@
+<div class="dialog">
+  <div class="dialogTitle">
+    <h3>{{isClickedTheView ? 'View the character' : 'Quotes of character'}}</h3>
+    <mat-divider></mat-divider>
+  </div>
+  <button class="btnX" mat-button (click)="close()">x</button>
+</div>
+<div *ngIf="isClickedTheView" class="mt-3">
+  <mat-dialog-content class="mat-typography">
+    <img src="{{characterData.img}}" width="500px" height="500px">
+    <div style="margin-left: 30px;">
+        <h1>Character Detail Page</h1>
+        <div className="mb-5">
+          <table className="table table-bordered">
+            <tbody>
+                <tr>
+                    <th scope="row">ID:</th>
+                    <td>{{characterData.char_id}}</td>
+                </tr>
+                <br>
+                <tr>
+                    <th scope="row">Name:</th>
+                    <td>{{characterData.name}}</td>
+                </tr>
+                <br>
+                <tr>
+                    <th scope="row">Birthday:</th>
+                    <td> {{characterData.birthday}}</td>
+                </tr>
+                <br>
+                <tr>
+                    <th scope="row">Occupation:</th>
+                    <td>{{characterData.occupation}}</td>
+                </tr>
+                <br>
+                <tr>
+                    <th scope="row">Image: </th>
+                    <td>{{characterData.img}}</td>
+                </tr>
+                <br>
+                <tr>
+                    <th scope="row">Status: </th>
+                    <td>{{characterData.appearance}}</td>
+                </tr>
+                <br>
+                <tr>
+                    <th scope="row">Nickname: </th>
+                    <td>{{characterData.nickname}}</td>
+                </tr>
+                <br>
+                <tr>
+                    <th scope="row">Portrayed: </th>
+                    <td>{{characterData.portrayed}}</td>
+                </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    <br>
+  </mat-dialog-content>
+</div>
+
+  <div *ngIf="!isClickedTheView" style="margin-left: 30px;">
+    <h1>{{characterData.name}}</h1>
+    <div className="mb-5" *ngFor="let quote of quotesData">
+      <mat-card class="mt-1">
+        <mat-card-title>"{{quote.quote}}"</mat-card-title>
+      </mat-card>
+    </div>
+  </div>
